@@ -188,7 +188,7 @@ int main() {
 ---
 ## Função Sleep() e usleep()
 
-- As funções Sleep( ) e usleep( ), funcionam em sistemas operacionais diferentes, embora ambas apresentem a mesma funcionalidade: parar o tempo de execução. Mas com uma questão a mais, elas pertencem a bibliotecas diferentes. E novamente ressalto a possibilidade da utilização de Diretivas de Compilação no tópico seguinte, caso queira criar um código que funcione em ambos os sistemas operacionais.
+As funções Sleep( ) e usleep( ), funcionam em sistemas operacionais diferentes, embora ambas apresentem a mesma funcionalidade: parar o tempo de execução. Mas com uma questão a mais, elas pertencem a bibliotecas diferentes. E novamente ressalto a possibilidade da utilização de Diretivas de Compilação no tópico seguinte, caso queira criar um código que funcione em ambos os sistemas operacionais.
 
 Exemplo 1: Sleep()
 
@@ -228,7 +228,7 @@ int main() {
 ---
 ## Diretivas de Compilação
 
-- Nos itens anteriores foi falado um pouco sobre o uso de diferentes códigos para diferentes sistemas operacionais, mas como driblar essa barreira? Como fazer um código que possa ser usado em ambos os sistemas? Simples, basta usarmos as diretivas de compilação.
+Nos itens anteriores foi falado um pouco sobre o uso de diferentes códigos para diferentes sistemas operacionais, mas como driblar essa barreira? Como fazer um código que possa ser usado em ambos os sistemas? Simples, basta usarmos as diretivas de compilação.
 
 Você já deve ter se perguntado em algum momento ao iniciar a programação em C o porquê de os includes e os defines terem uma sintaxe, ou ainda se você já estiver avançado criando novos projetos, o porquê de existirem alguns itens nos headers. Essas são as diretivas de compilação, não vamos entrar em muitos detalhes, vamos utilizar apenas a parte básica.
 
@@ -248,3 +248,4 @@ void limpar_tela() {
 #endif
 }
 ```
+---
