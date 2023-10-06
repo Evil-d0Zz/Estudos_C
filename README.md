@@ -1,5 +1,5 @@
 # Linguagem C
-
+---
 ## Estrutura Padrão
 
 ```c
@@ -10,7 +10,7 @@ void main(){
 }
 
 ```
-
+---
 ## Variaveis
 
 Note: Para declarar uma variável em C, é nescessário especificar o tipo e nome da da variável.
@@ -32,7 +32,7 @@ float preco = 12.50;
 double preço_precico = 1.23456;
 bool confirma = True;
 ```
-
+---
 ## Operadores
 
 Note: Os Operadores são símbolos que indicam uma operação a ser realizada em uma ou mais variaveis.
@@ -76,7 +76,7 @@ Exemplo:
 &&   e
 ||   ou
 ```
-
+---
 ## Estruturas de Controle
 
 Note: As Estruturas de controle são usadas para controlar o fluxo de execução de um programa C.
@@ -157,7 +157,7 @@ for (int i = 0; i < 10; i++) {
     printf("%d\n", i);
 }
 ```
-
+---
 ## Funções
 
 Note: As funções são blocos de código que realizam uma tarefa específica. Para definir uma função, é necessário especificar o tipo de retorno da função, o nome da função e os parâmetros da função.
@@ -170,4 +170,58 @@ int soma(int x, int y) {
 }
 
 int resultado = soma(10, 5); // Atribui o valor 15 à variável resultado
+```
+---
+## Interação com o Sistema
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // Biblioteca responsavel pelo comando "system"
+
+int main() {
+    printf("Abrindo o firefox...");
+    system("firefox");
+
+    return 0;
+}
+```
+---
+## Função Sleep() e usleep()
+
+- As funções Sleep( ) e usleep( ), funcionam em sistemas operacionais diferentes, embora ambas apresentem a mesma funcionalidade: parar o tempo de execução. Mas com uma questão a mais, elas pertencem a bibliotecas diferentes. E novamente ressalto a possibilidade da utilização de Diretivas de Compilação no tópico seguinte, caso queira criar um código que funcione em ambos os sistemas operacionais.
+
+Exemplo 1: Sleep()
+
+Note: primeiramente a função Sleep( ), isso mesmo, a letra S é maiúscula, ela funciona apenas em Windows e pertence a biblioteca “windows.h”, como parâmetro para a função deve-se passar um valor inteiro referente à quantidade de milissegundos que irá parar a execução do programa. Logo, caso eu execute o comando Sleep(500); o programa irá parar a sua execução durante meio segundo.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>     // Biblioteca responsavel pela Função system()
+#include <windows.h>   // Biblioteca Responsavel pela Função Sleep()
+
+int main() {
+    printf("Abrindo o firefox...");
+    Sleep(5000) // 5 Segundos de Espera
+    system("firefox");
+
+    return 0;
+}
+```
+
+Exemplo 2: usleep()
+
+Note: A função usleep( ), funcionando em sistemas Unix, a função está contida na biblioteca “unistd.h” e, diferente da função anterior, o valor inteiro informado como parâmetro da função indicará em microssegundos o tempo a ser parada a execução do programa, então se atente sempre a conversão de unidades. Portanto, caso eu execute usleep(500 *1000); o programa irá novamente parar a execução durante meio segundo, note que realizei uma multiplicação por 1000 para trabalhar com o tempo de micro para milissegundos.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>     // Biblioteca responsavel pela Função system()
+#include <unistd.h>   // Biblioteca Responsavel pela Função usleep()
+
+int main() {
+    printf("Abrindo o firefox...");
+    Sleep(5000) // 5 Segundos de Espera
+    system("firefox");
+
+    return 0;
+}
 ```
