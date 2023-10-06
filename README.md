@@ -225,3 +225,26 @@ int main() {
     return 0;
 }
 ```
+---
+## Diretivas de Compilação
+
+- Nos itens anteriores foi falado um pouco sobre o uso de diferentes códigos para diferentes sistemas operacionais, mas como driblar essa barreira? Como fazer um código que possa ser usado em ambos os sistemas? Simples, basta usarmos as diretivas de compilação.
+
+Você já deve ter se perguntado em algum momento ao iniciar a programação em C o porquê de os includes e os defines terem uma sintaxe, ou ainda se você já estiver avançado criando novos projetos, o porquê de existirem alguns itens nos headers. Essas são as diretivas de compilação, não vamos entrar em muitos detalhes, vamos utilizar apenas a parte básica.
+
+Primeiro vamos entender basicamente que as diretivas de compilação é tudo que irá rodar antes do código, ou seja, todas as inclusões de bibliotecas, definições de constantes, nessas diretivas não podemos utilizar variáveis, mas podemos fazer testes lógicos. Veja o exemplo abaixo, que criamos uma função para gerenciar as funções de sleep:
+
+ 
+Nessa função temos a inclusão das diretivas de #ifdef que funciona da mesma maneira que um if, porém chega a constante (definição) do sistema operacional e assim por diante, repare que existe a necessidade do uso do #endif uma vez que não existem chaves para delimitar o fim do código em cada bloco. E repare que o uso é feito duas vezes, dentro e fora da função em questão.
+
+```c
+void limpar_tela() {
+#ifdef __linux__
+	system("clear");
+#elif _WIN32
+	system("cls");
+#else
+
+#endif
+}
+```
